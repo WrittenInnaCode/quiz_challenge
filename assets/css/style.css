@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    background: rgb(179, 220, 160);
+}
+
+header {
+    margin: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#view-scores {
+    color: white;
+    text-shadow: 2px 2px 4px #434242;
+}
+#view-scores:hover  {
+    cursor: pointer;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+}
+
+#container input{
+    margin-bottom: 20px;
+}
+
+
+#container p{
+    margin-bottom: 30px;
+}
+
+#container form {
+    margin-bottom: 10px;
+}
+
+#container button {
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgb(233, 167, 247);
+    cursor: pointer;
+    margin: 10px;
+}
+
+#questions {
+    width: 100%;
+}
+
+#container button:hover {
+    background: rgb(224, 120, 242);
+}
+
+.allbuttons {
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgb(233, 167, 247);
+    cursor: pointer;
+    margin-top: 35px;
+}
+
+.allbuttons:hover {
+    background: rgb(224, 120, 242);
+}
+
+main {
+    background: white;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 540px;
+    padding: 35px 35px;
+    text-align: center;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+#quiz_title {
+    height: 70px;
+    width: 100%;
+}
+
+#content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 350px;
+}
+
+
+ul li {
+    background-color: rgb(233, 167, 247);
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    text-align: left;
+}
+
+ul li:hover {
+    background: rgb(224, 120, 242);
+    cursor: pointer;
+}
+
+h3 {
+    margin-bottom: 30px;
+}
+
+#highscores {
+    text-align: left;
+}
+
+#high-score {
+    width: 90%
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#highscores li { 
+    background: rgb(203, 248, 182); 
+    padding: 5px;
+}
+
+#highscores li:nth-child(odd) { 
+    background: rgb(179, 220, 160); 
+}
+
+.hidden {
+    display: none;
+}
+
+#correctWrong {
+    text-align: left;
+    color: rgb(179, 220, 160); 
+    margin-left: 10px;
+}
