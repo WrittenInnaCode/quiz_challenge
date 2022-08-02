@@ -154,3 +154,10 @@ h3 {
     color: rgb(179, 220, 160); 
     margin-left: 10px;
 }
+
+
+@media screen and (max-width: 768px) {
+    main {
+        width: 450px;
+    }
+}

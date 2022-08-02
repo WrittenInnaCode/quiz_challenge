@@ -1,4 +1,3 @@
-// var contentEl = document.getElementById("content");
 var startBtn = document.querySelector("#start_btn"); // take a css style element selector
 var timerEl = document.querySelector("#timer");
 var containerEl = document.querySelector("#container");
@@ -22,8 +21,6 @@ var currentQuestionIndex = 0;
 
 var highScoreEl = document.querySelector("#high-score");
 highScoreEl.style.display = 'none'; // do not display until it is needed
-
-//correctWrongEl.style.display = 'none';
 
 
 
@@ -109,9 +106,9 @@ containerEl.addEventListener("click", function(event) {
         console.log(userGuess);
 
         if (userGuess !== currentQuestion.answer) {
-            timer-=10;  // -10s for wrong answer 
+            timer-=10;                                      // -10s for wrong answer 
             timerEl.textContent = timer;
-            correctWrongEl.textContent = "Wrong!";
+            correctWrongEl.textContent = "Wrong!";          // "wrong" prompt
             console.log("Wrong!");
             
             if (timer<=0) {
@@ -120,19 +117,19 @@ containerEl.addEventListener("click", function(event) {
 
 
         } else {
-            correctWrongEl.textContent = "Correct!";
+            correctWrongEl.textContent = "Correct!";        // "correct" promt
             console.log("Correct!");
         }
 
 
-        correctWrongEl.classList.remove("hidden");
+        correctWrongEl.classList.remove("hidden");      //wrong/correct prompts disappear in 1s
         setTimeout(function(){
             correctWrongEl.setAttribute("class", "hidden")
         },1000);
 
         currentQuestionIndex++;
         
-        if (questions.length>currentQuestionIndex) {
+        if (questions.length>currentQuestionIndex) { // quiz is finished
             renderCurrentQuestion();
         }else {
             allDone(); 
@@ -158,11 +155,12 @@ function allDone(){
     var submitButton = containerEl.appendChild(document.createElement("button"));
     submitButton.textContent = "Submit";
 
+    
     submitButton.addEventListener("click", function() {
         var initials = input.value.trim();
 
         if (initials !== ""){
-            var scores = JSON.parse(localStorage.getItem("scores")) || [];
+            var scores = JSON.parse(localStorage.getItem("scores")) || []; //save scores in local storage
             var newScore = {
                 score: timer, initials:initials
             }
@@ -177,12 +175,12 @@ function allDone(){
 
 }
 
-function renderHighScores() {
+function renderHighScores() {                   // high score list
     highScoreEl.style.display = "block";
 
     var scores = JSON.parse(localStorage.getItem("scores")) || [];
     var highscores = document.querySelector("#highscores");
-    scores.sort(function(a,b){
+    scores.sort(function(a,b){                  // list scores in descending order
         return b.score - a.score
     })
 
